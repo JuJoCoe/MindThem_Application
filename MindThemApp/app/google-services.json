@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "631915830541",
+    "firebase_url": "https://mindthem-76211.firebaseio.com",
+    "project_id": "mindthem-76211",
+    "storage_bucket": "mindthem-76211.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631915830541:android:320fbc7c6de25e2c",
+        "android_client_info": {
+          "package_name": "c.mindthem.mindthemapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631915830541-u3p6fkvsmd2ctust330svg7nqlmcuh6k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "c.mindthem.mindthemapp",
+            "certificate_hash": "2bf3e26de9b4417eb678b2c374a86c3464893e4d"
+          }
+        },
+        {
+          "client_id": "631915830541-n5d20s6o462qv0qsqutagvqdsf9bum6i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuXh6lJFpv-hjGu1WLwZi-Fp9SjQSF9m8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631915830541-n5d20s6o462qv0qsqutagvqdsf9bum6i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

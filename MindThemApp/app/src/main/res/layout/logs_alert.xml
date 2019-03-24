@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/Logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="46dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="serif"
+        android:singleLine="false"
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimary"
+        android:textIsSelectable="false"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/AlertButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/AlertButton"
+        android:layout_width="213dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/inactive_button"
+        android:onClick="addItems"
+        android:text="@string/alert_inactive"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Logo" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="385dp"
+        android:layout_height="385dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginTop="7dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="371dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="52dp"
+        android:text="Alert Log"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlertButton" />
+
+
+</android.support.constraint.ConstraintLayout>

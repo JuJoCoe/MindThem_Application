@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
+
+
+    <TextView
+        android:id="@+id/MindThemTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:text="Mind Them"
+        android:textSize="35dp"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/BluetoothTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+        />
+
+
+    <TextView
+        android:id="@+id/BluetoothTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview"
+        android:layout_centerHorizontal="true"
+        android:text="Bluetooth"
+        android:textColor="@color/colorPrimary"
+        android:textSize="35dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MindThemTextView" />
+    />
+
+    <ImageView
+        android:id="@+id/BluetoothImage"
+        android:layout_width="69dp"
+        android:layout_height="83dp"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/bluetooth_logo_desc"
+        android:src="@android:drawable/stat_sys_data_bluetooth"
+        android:tint="@color/Inactive"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BluetoothTextView"
+    />
+
+
+    <Button
+        android:id="@+id/connectbutton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="18dp"
+        android:layout_weight="1"
+        android:text="Connect"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BluetoothImage"
+    />
+
+    <Button
+        android:id="@+id/sendinfobutton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="18dp"
+        android:layout_weight="1"
+        android:text="Send Info"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/connectbutton" />
+
+    <Button
+        android:id="@+id/disconnectbutton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:layout_marginTop="18dp"
+        android:text="Disconnect"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sendinfobutton" />
+
+    <Button
+        android:id="@+id/Manual_Detection"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:layout_marginTop="18dp"
+        android:text="Manual Detection"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/disconnectbutton" />
+
+    <Button
+        android:id="@+id/Change_Info"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:text="Change Caregiver Info"
+        android:layout_marginTop="18dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Manual_Detection" />
+
+
+</android.support.constraint.ConstraintLayout>
