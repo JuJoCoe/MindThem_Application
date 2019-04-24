@@ -31,6 +31,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -99,11 +100,53 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
+        Button resetpassword = (Button) findViewById(R.id.reset_password);
+        resetpassword.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ResetPassword();
+            }
+        });
+
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
         mLogo = findViewById(R.id.app_logo);
 
       //  startService(new Intent(this, BluetoothService.class));
+    }
+
+    public boolean checkInputs(){
+        boolean inputOK = true;
+        mEmailView.setError(null);
+
+        // Store values at the time of the login attempt.
+        String email = mEmailView.getText().toString();
+
+        if (TextUtils.isEmpty(email)) {
+            mEmailView.setError("Email is needed to reset password");
+            inputOK = false;
+        } else if (!isEmailValid(email)) {
+            mEmailView.setError("Not a valid email");
+            inputOK = false;
+        }
+        return inputOK;
+    }
+
+    public void ResetPassword() {
+        String email = mEmailView.getText().toString();
+        boolean inputOK = checkInputs();
+        if (inputOK) {
+            FirebaseAuth.getInstance().sendPasswordResetEmail(email)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(LoginActivity.this, "Email Sent",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        }
     }
 
     private void populateAutoComplete() {
@@ -182,7 +225,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+        if (TextUtils.isEmpty(password) || !isPasswordValid(password)) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
             focusView = mPasswordView;
             cancel = true;
@@ -346,7 +389,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             Task<AuthResult> task = mAuth.signInWithEmailAndPassword(mEmail, mPassword);
 
             // Wait for the authentication process to complete.
-            while(!task.isComplete()){
+            while (!task.isComplete()) {
                 try {
                     // Simulate network access.
                     Thread.sleep(1000);
@@ -355,10 +398,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 }
             }
 
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
                 return true;
-            }
-            else{
+            } else {
                 return false;
             }
         }
@@ -369,7 +411,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
-                Intent intent = new Intent(getBaseContext(), bluetooth_test.class);
+                Intent intent = new Intent(getBaseContext(), logs_alert_page.class);
                 startActivity(intent);
 
                 finish();
@@ -384,6 +426,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask = null;
             showProgress(false);
         }
+
     }
 }
 

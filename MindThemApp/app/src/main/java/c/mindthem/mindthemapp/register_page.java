@@ -28,6 +28,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+
+
 import java.util.Set;
 
 /**
@@ -38,7 +40,7 @@ public class register_page extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseUser curUser;
-    private EditText password, email, confirmPassword, name, age, PrimaryContact, SecondaryContact;
+    private EditText password, email, confirmPassword, name;
     private Button button_register;
 
 
@@ -51,9 +53,6 @@ public class register_page extends AppCompatActivity {
         password =(EditText) findViewById(R.id.password_field);
         confirmPassword = (EditText) findViewById(R.id.confirm_password_field);
         name = (EditText) findViewById(R.id.name_field);
-        age = (EditText) findViewById(R.id.age_field);
-   //     PrimaryContact = (EditText) findViewById(R.id.Primary_Contact);
-   //     SecondaryContact = (EditText) findViewById(R.id.Secondary_Contact);
 
         button_register = (Button)findViewById(R.id.create_account_button);
         mAuth = FirebaseAuth.getInstance();
@@ -81,9 +80,6 @@ public class register_page extends AppCompatActivity {
         // Put all the data to be input into the database.
         child.child("email").setValue(email.getText().toString());
         child.child("name").setValue(name.getText().toString());
-        child.child("age").setValue(Integer.parseInt(age.getText().toString()));
-     //   child.child("primarycontact").setValue(Integer.parseInt(PrimaryContact.getText().toString()));
-     //   child.child("secondarycontact").setValue(Integer.parseInt(SecondaryContact.getText().toString()));
     }
 
     public boolean checkInputs(){
@@ -122,26 +118,16 @@ public class register_page extends AppCompatActivity {
             confirmPassword.setText("");
             inputOK = false;
         }
-
         // If the name is not entered, then the name is invalid.
         if(TextUtils.isEmpty(name.getText())){
             name.setError("Name is required.");
             inputOK = false;
         }
 
-        // If the age is not entered, the age is less than 18, or the age is over 150,
-        // then the age is invalid.
-        if(TextUtils.isEmpty(age.getText())){
-            age.setError("Age is required.");
-            inputOK = false;
-        }
-
-
-
         return inputOK;
     }
 
-        //Registers a user using Firebase Authentication
+    //Registers a user using Firebase Authentication
     public void RegisterUser() {
         boolean inputOK = checkInputs();
         if (inputOK) {

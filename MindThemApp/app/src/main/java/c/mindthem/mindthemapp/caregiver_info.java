@@ -62,6 +62,50 @@ public class caregiver_info extends AppCompatActivity {
                 }
             }
         });
+
+        DatabaseReference userDB = FirebaseDatabase.getInstance().getReference().child(curUser.getUid());
+        DatabaseReference addfirstname = userDB.child("Caregiver1").child("firstname");
+        DatabaseReference addlastname = userDB.child("Caregiver1").child("lastname");
+        DatabaseReference phonenumber = userDB.child("Caregiver1").child("phonenumber");
+
+        addfirstname.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String tempstring = (String) dataSnapshot.getValue();
+                ((EditText) findViewById(R.id.firstname_field)).setText(tempstring);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        addlastname.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String tempstring = (String) dataSnapshot.getValue();
+                ((EditText) findViewById(R.id.lastname_field)).setText(tempstring);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        phonenumber.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String tempstring = (String) dataSnapshot.getValue();
+                ((EditText) findViewById(R.id.phone_number)).setText(tempstring);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
 

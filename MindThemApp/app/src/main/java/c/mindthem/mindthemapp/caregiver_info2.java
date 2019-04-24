@@ -61,6 +61,50 @@ public class caregiver_info2 extends AppCompatActivity {
                 }
             }
         });
+
+        DatabaseReference userDB = FirebaseDatabase.getInstance().getReference().child(curUser.getUid());
+        DatabaseReference addfirstname = userDB.child("Caregiver2").child("firstname");
+        DatabaseReference addlastname = userDB.child("Caregiver2").child("lastname");
+        DatabaseReference phonenumber = userDB.child("Caregiver2").child("phonenumber");
+
+        addfirstname.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String tempstring = (String) dataSnapshot.getValue();
+                ((EditText) findViewById(R.id.firstname_field)).setText(tempstring);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        addlastname.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String tempstring = (String) dataSnapshot.getValue();
+                ((EditText) findViewById(R.id.lastname_field)).setText(tempstring);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        phonenumber.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String tempstring = (String) dataSnapshot.getValue();
+                ((EditText) findViewById(R.id.phone_number)).setText(tempstring);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
 
@@ -124,7 +168,7 @@ public class caregiver_info2 extends AppCompatActivity {
             Toast.makeText(caregiver_info2.this, "Added Secondary Caregiver",
                     Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(getBaseContext(), bluetooth_test.class);
+            Intent intent = new Intent(getBaseContext(), logs_alert_page.class);
             startActivity(intent);
 
             finish();

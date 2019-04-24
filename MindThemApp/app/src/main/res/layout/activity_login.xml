@@ -23,15 +23,16 @@
 
     <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="254dp"
-        android:layout_height="62dp"
-        app:srcCompat="@android:drawable/btn_star" />
+        android:layout_width="338dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="5dp"
+        app:srcCompat="@drawable/longlogo" />
 
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="287dp"
-        android:layout_marginTop="100dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="parent">
@@ -46,7 +47,7 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@android:color/white" >
+                android:textColorHint="@android:color/black" >
 
                 <AutoCompleteTextView
                     android:id="@+id/email"
@@ -56,16 +57,16 @@
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textColor="@android:color/white"
-                    android:textColorHighlight="@android:color/white"
-                    android:textColorHint="@android:color/white" />
+                    android:textColor="@android:color/black"
+                    android:textColorHighlight="@android:color/black"
+                    android:textColorHint="@android:color/black" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="@android:color/white" >
+                android:textColorHint="@android:color/black" >
 
                 <EditText
                     android:id="@+id/password"
@@ -78,9 +79,9 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textColor="@android:color/white"
-                    android:textColorHighlight="@android:color/white"
-                    android:textColorHint="@android:color/white" />
+                    android:textColor="@android:color/black"
+                    android:textColorHighlight="@android:color/black"
+                    android:textColorHint="@android:color/black" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -101,6 +102,15 @@
                 android:layout_marginTop="18dp"
                 android:onClick="register"
                 android:text="Register Now"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/reset_password"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Reset Password"
                 android:textStyle="bold" />
 
 

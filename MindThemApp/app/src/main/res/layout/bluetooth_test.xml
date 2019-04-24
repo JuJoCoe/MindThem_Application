@@ -30,7 +30,7 @@
         android:layout_below="@+id/textview"
         android:layout_centerHorizontal="true"
         android:text="Bluetooth"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="35dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -53,59 +53,103 @@
 
     <Button
         android:id="@+id/connectbutton"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_width="135dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="18dp"
         android:layout_weight="1"
         android:text="Connect"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BluetoothImage"
-    />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BluetoothImage" />
 
     <Button
-        android:id="@+id/sendinfobutton"
-        android:layout_width="match_parent"
+        android:id="@+id/stopdetection"
+        android:layout_width="138dp"
         android:layout_height="60dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="21dp"
         android:layout_weight="1"
-        android:text="Send Info"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:text="Stop Detection"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/connectbutton" />
 
     <Button
         android:id="@+id/disconnectbutton"
-        android:layout_width="match_parent"
+        android:layout_width="124dp"
         android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="101dp"
         android:layout_weight="1"
-        android:layout_marginTop="18dp"
         android:text="Disconnect"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sendinfobutton" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BluetoothTextView" />
 
     <Button
         android:id="@+id/Manual_Detection"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
-        android:layout_marginTop="18dp"
         android:text="Manual Detection"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/disconnectbutton" />
+        app:layout_constraintTop_toBottomOf="@+id/stopdetection"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/Change_Info"
-        android:layout_width="match_parent"
+        android:layout_width="159dp"
         android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="14dp"
         android:layout_weight="1"
         android:text="Change Caregiver Info"
-        android:layout_marginTop="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/disconnectbutton" />
+
+    <Button
+        android:id="@+id/viewlog"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:text="Viewlog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Manual_Detection" />
+        app:layout_constraintTop_toBottomOf="@+id/Manual_Detection"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/Min"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Min"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_password_field"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stopdetection" />
+
+    <EditText
+        android:id="@+id/Max"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Max"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_password_field"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stopdetection" />
 
 
 </android.support.constraint.ConstraintLayout>
