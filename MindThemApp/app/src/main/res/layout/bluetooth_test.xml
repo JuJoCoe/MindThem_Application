@@ -145,7 +145,7 @@
         android:layout_marginRight="32dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Max"
+        android:hint="Delta"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/confirm_password_field"
         app:layout_constraintRight_toRightOf="parent"

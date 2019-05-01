@@ -408,25 +408,15 @@ public class bluetooth_test extends Activity {
         String s = message;
         String[] tokens = s.split(",");
 
-        for (String t : tokens)
-            listItems.add(t);
+        if(!message.equals("")) {
+            for (String t : tokens)
+                listItems.add(t);
 
-        DatabaseReference userDB = FirebaseDatabase.getInstance().getReference().child(curUser.getUid());
-        DatabaseReference addtimestamp = userDB.child("Timestamps");
+            DatabaseReference userDB = FirebaseDatabase.getInstance().getReference().child(curUser.getUid());
+            DatabaseReference addtimestamp = userDB.child("Timestamps");
 
-        addtimestamp.addListenerForSingleValueEvent(new ValueEventListener() {
-        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-            String tempstring = (String) snapshot.getValue();
-            listItems.add(tempstring);
+            addtimestamp.setValue(listItems);
         }
-    }
-    @Override
-    public void onCancelled(@NonNull DatabaseError databaseError) {
-    }
-});
-        addtimestamp.setValue(listItems);
-
     }
 
 }

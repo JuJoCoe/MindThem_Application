@@ -270,7 +270,6 @@ public class logs_alert_page extends AppCompatActivity {
         adapter.notifyDataSetChanged();
         DatabaseReference addtimestamp = userDB.child("Timestamps");
         addtimestamp.setValue(listItems);
-
     }
 
     public static String getCurrentTimeStamp() {
